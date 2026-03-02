@@ -3,9 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>travel-recommendation-website</title>
+    <title>Travel-Recommendation-Website</title>
+    
+    <style>
+        /* تنسيقات عامة للجسم */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* تنسيق الـ Navbar */
+        nav {
+            background-color: #2c3e50; /* لون غامق احترافي */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* روابط التنقل */
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db; /* يتغير اللون عند تمرير الماوس */
+        }
+
+        /* قسم البحث والأزرار */
+        .search-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        #btnSearch {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        #btnSearch:hover {
+            background-color: #2ecc71;
+        }
+
+        #btnReset {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #btnReset:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </head>
 <body>
-  
+
+    <nav>
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact_us.html">Contact Us</a>
+        </div>
+
+        <div class="search-section">
+            <input type="text" id="conditionInput" placeholder="Enter keyword (beach, temple, country)...">
+            <button id="btnSearch" type="button">Search</button>
+            <button id="btnReset" type="button">Reset</button>
+        </div>
+    </nav>
+
 </body>
 </html>
