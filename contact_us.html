@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-Recommendation-Website</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* تنسيقات عامة */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* لمنع السكرول في الصفحة الرئيسية */
+        }
+
+        /* Task 3: خلفية الصفحة الرئيسية */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('tom-barrett-M0AWNxnLaMw-unsplash.jpg'); /* استبدل هذا الرابط بصورتك */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        /* تنسيق الـ Navbar */
+        nav {
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .content{
+            margin-left: 150px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+      
+        /* أيقونات التواصل الاجتماعي (Social Media Icons) */
+        .social-icons {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+
+        /* حاوية الفورم مع تأثير البلور */
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.1); /* خلفية بيضاء شفافة جداً */
+    backdrop-filter: blur(15px); /* تأثير الضباب (البلور) */
+    -webkit-backdrop-filter: blur(15px); /* لدعم متصفحات سفاري */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حدود خفيفة لتعزيز الشكل الزجاجي */
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white;
+}
+
+/* تنسيق العناوين والجروب */
+.contact-form-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* تنسيق خانات الإدخال */
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8); /* خلفية فاتحة للكتابة بوضوح */
+    color: #333;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* زر الإرسال */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+     
+    </style>
+</head>
+<body>
+ <nav>
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact_us.html">Contact Us</a>
+        </div>
+
+        
+    </nav>
+
+    
+    <main class="hero-section">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="content">
+            <div>
+                <h1>Explore Dream Destination </h1><br>
+                <span>Get in toch</span>
+            </div>
+            
+             
+             <div class="contact-form-container">
+    <form id="contactForm">
+        <h1>Contact Us</h1>
+        
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</div>
+        </div>
+        
+    </main>
+
+</body>
+</html>

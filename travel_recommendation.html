@@ -8,36 +8,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* تنسيقات عامة */
+        /* تنسيقاتك السابقة كما هي */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Arial', sans-serif;
-            overflow: hidden; /* لمنع السكرول في الصفحة الرئيسية */
+            overflow-x: hidden; /* تم التعديل للسماح بالسكرول العمودي فقط عند ظهور النتائج */
         }
 
-        /* Task 3: خلفية الصفحة الرئيسية */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('tom-barrett-M0AWNxnLaMw-unsplash.jpg'); /* استبدل هذا الرابط بصورتك */
+                        url('tom-barrett-M0AWNxnLaMw-unsplash.jpg'); 
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             color: white;
             position: relative;
         }
 
-        /* تنسيق الـ Navbar */
         nav {
             background-color: rgba(44, 62, 80, 0.9);
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: absolute;
+            position: fixed; /* تغيير لـ fixed ليبقى ظاهراً عند البحث */
             top: 0;
             width: 100%;
             box-sizing: border-box;
@@ -51,10 +49,9 @@
             font-weight: bold;
         }
 
-        /* محتوى الصفحة الرئيسية (Task 3) */
         .content {
             margin-left: 10%;
-            max-width: 500px;
+            max-width: 400px; /* تقليل العرض قليلاً لترك مساحة للنتائج */
         }
 
         .content h1 {
@@ -81,7 +78,6 @@
             font-weight: bold;
         }
 
-        /* أيقونات التواصل الاجتماعي (Social Media Icons) */
         .social-icons {
             position: absolute;
             left: 20px;
@@ -92,22 +88,48 @@
             gap: 20px;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            transition: 0.3s;
-        }
+        .social-icons a { color: white; font-size: 1.5rem; transition: 0.3s; }
+        .social-icons a:hover { color: #3498db; }
 
-        .social-icons a:hover {
-            color: #3498db;
-        }
-
-        /* تنسيق قسم البحث */
         .search-section { display: flex; gap: 10px; }
         input[type="text"] { padding: 8px; border-radius: 5px; border: none; width: 250px; }
         button { padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; }
         #btnSearch { background-color: #27ae60; color: white; }
         #btnReset { background-color: #e74c3c; color: white; }
+
+        /* --- إضافات Task 8: تنسيق النتائج (Grid) --- */
+        #resultsContainer {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* عمود واحد داخل الحاوية الجانبية */
+            gap: 20px;
+            position: absolute;
+            right: 5%;
+            top: 100px;
+            width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 500;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 10px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .result-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .result-info { padding: 15px; text-align: left; }
+        .result-info h3 { margin: 0 0 10px 0; color: #2c3e50; }
+        .result-info p { margin: 0 0 15px 0; font-size: 0.9rem; color: #555; line-height: 1.4; }
+        .btn-visit { background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -138,12 +160,14 @@
             <h1>Explore Dream Destination</h1>
             <p>
                 The Travel Recommendation App helps users explore popular travel destinations 
-                through an interactive and user-friendly interface. It allows users to search for 
-                beaches, temples, and countries to view related cities along with images and descriptions.
+                through an interactive and user-friendly interface.
             </p>
             <button class="btn-book">Book Now</button>
         </div>
+
+        <div id="resultsContainer"></div>
     </main>
 
+    <script src="travel_recommendation.js"></script>
 </body>
 </html>
