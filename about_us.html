@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-Recommendation-Website</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* تنسيقات عامة */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* لمنع السكرول في الصفحة الرئيسية */
+        }
+
+        /* Task 3: خلفية الصفحة الرئيسية */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('tom-barrett-M0AWNxnLaMw-unsplash.jpg'); /* استبدل هذا الرابط بصورتك */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        /* تنسيق الـ Navbar */
+        nav {
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        
+
+        /* أيقونات التواصل الاجتماعي (Social Media Icons) */
+        .social-icons {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+/* تنسيق النص العلوي */
+.content{
+    margin-left: 300px;
+}
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+/* تنسيق قسم الفريق */
+.team-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.team-left h2 {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    border-bottom: 3px solid #fff;
+    text-decoration: none;
+}
+
+.team-right {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* لجعل الكروت تنزل تحت بعض في الشاشات الصغيرة */
+}
+
+/* تنسيق الكارت */
+.team-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 200px;
+    backdrop-filter: blur(5px);
+}
+
+.team-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.team-card h3 {
+    margin: 10px 0;
+}
+
+.team-card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    height: 40px; /* لتوحيد ارتفاع الوصف */
+}
+
+/* شكل الزر للبوزيشن */
+.pos-btn {
+    background-color: #2980b9;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+       
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact_us.html">Contact Us</a>
+        </div>
+
+    </nav>
+
+    <main class="hero-section">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="content">
+    <h1>About us</h1>
+    <p>
+        We are dedicated to bringing you the best travel experiences from around the globe. 
+        Our mission is to simplify your search for the perfect destination, whether it's a 
+        serene beach, a historic temple, or a vibrant city. We believe that every journey 
+        tells a story, and we are here to help you write your next chapter with ease and joy. 
+        Explore our curated recommendations and start planning your dream vacation today.
+    </p>
+
+    <div class="team-wrapper">
+        <div class="team-left">
+            <h2>OUR TEAM</h2>
+        </div>
+        
+        <div class="team-right">
+            <div class="team-card">
+                <i class="fas fa-user-circle"></i>
+                <h3>John Doe</h3>
+                <p>Expert in global tourism and strategic planning.</p>
+                <div class="pos-btn">CEO</div>
+            </div>
+
+            <div class="team-card">
+                <i class="fas fa-user-circle"></i>
+                <h3>Celina Thomas</h3>
+                <p>Leading our technical team with innovative solutions.</p>
+                <div class="pos-btn">Team Lead</div>
+            </div>
+
+            <div class="team-card">
+                <i class="fas fa-user-circle"></i>
+                <h3>Mike Tyson</h3>
+                <p>Ensuring top quality delivery for every project.</p>
+                <div class="pos-btn">Delivery Head</div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+</body>
+</html>
