@@ -5,77 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel-Recommendation-Website</title>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        /* تنسيقات عامة للجسم */
-        body {
+        /* تنسيقات عامة */
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            overflow: hidden; /* لمنع السكرول في الصفحة الرئيسية */
+        }
+
+        /* Task 3: خلفية الصفحة الرئيسية */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('tom-barrett-M0AWNxnLaMw-unsplash.jpg'); /* استبدل هذا الرابط بصورتك */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
         }
 
         /* تنسيق الـ Navbar */
         nav {
-            background-color: #2c3e50; /* لون غامق احترافي */
+            background-color: rgba(44, 62, 80, 0.9);
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
         }
 
-        /* روابط التنقل */
         .nav-links a {
             color: white;
             text-decoration: none;
             margin-right: 20px;
             font-weight: bold;
-            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #3498db; /* يتغير اللون عند تمرير الماوس */
+        /* محتوى الصفحة الرئيسية (Task 3) */
+        .content {
+            margin-left: 10%;
+            max-width: 500px;
         }
 
-        /* قسم البحث والأزرار */
-        .search-section {
-            display: flex;
-            gap: 10px;
+        .content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.1;
         }
 
-        input[type="text"] {
-            padding: 8px;
-            border-radius: 5px;
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-book {
+            background-color: #1e8449;
+            color: white;
+            padding: 12px 25px;
             border: none;
-            width: 250px;
-        }
-
-        button {
-            padding: 8px 15px;
             border-radius: 5px;
-            border: none;
+            font-size: 1rem;
             cursor: pointer;
             font-weight: bold;
-            transition: background 0.3s;
         }
 
-        #btnSearch {
-            background-color: #27ae60;
+        /* أيقونات التواصل الاجتماعي (Social Media Icons) */
+        .social-icons {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-icons a {
             color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
         }
 
-        #btnSearch:hover {
-            background-color: #2ecc71;
+        .social-icons a:hover {
+            color: #3498db;
         }
 
-        #btnReset {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        #btnReset:hover {
-            background-color: #c0392b;
-        }
+        /* تنسيق قسم البحث */
+        .search-section { display: flex; gap: 10px; }
+        input[type="text"] { padding: 8px; border-radius: 5px; border: none; width: 250px; }
+        button { padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; }
+        #btnSearch { background-color: #27ae60; color: white; }
+        #btnReset { background-color: #e74c3c; color: white; }
     </style>
 </head>
 <body>
@@ -88,11 +120,30 @@
         </div>
 
         <div class="search-section">
-            <input type="text" id="conditionInput" placeholder="Enter keyword (beach, temple, country)...">
+            <input type="text" id="conditionInput" placeholder="Enter destination or keyword...">
             <button id="btnSearch" type="button">Search</button>
             <button id="btnReset" type="button">Reset</button>
         </div>
     </nav>
+
+    <main class="hero-section">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="content">
+            <h1>Explore Dream Destination</h1>
+            <p>
+                The Travel Recommendation App helps users explore popular travel destinations 
+                through an interactive and user-friendly interface. It allows users to search for 
+                beaches, temples, and countries to view related cities along with images and descriptions.
+            </p>
+            <button class="btn-book">Book Now</button>
+        </div>
+    </main>
 
 </body>
 </html>
